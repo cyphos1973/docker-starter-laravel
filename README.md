@@ -19,12 +19,12 @@ Docker-starter-laravel is a reference app created to show how create the contain
 ### Installation
 1: Clone the current repository:
 ```bash
-$ git clone git@github.com:cyphos1973/docker-starter.git
+$ git clone git@github.com:cyphos1973/docker-starter-laravel.git docker-starter-laravel
 ```
 
 2: Enter in the directory
 ```bash
-$ cd docker-starter
+$ cd docker-starter-laravel
 ```
 3: Execute these commands below into your working folder to install the project: (see Makefile)
 ```bash
@@ -55,7 +55,7 @@ Contribution are always welcome and recommended! Here is how:
 
 1: Clone to your machine
  ```bash
- $ git clone https://github.com/YOUR_USERNAME/docker-starter.git
+ $ git clone https://github.com/cyphos1973/docker-starter-laravel.git
  ```
 2: Create a new branch
  ```bash
