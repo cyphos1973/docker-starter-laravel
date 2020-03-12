@@ -1,7 +1,4 @@
 include .env
-DOCKER_COMPOSE		= docker-compose
-SYMFONY			= $(DOCKER_COMPOSE) exec -T php /usr/bin/entrypoint make --directory=app/
-
 
 build:
 	$(DOCKER_COMPOSE) build
@@ -12,11 +9,14 @@ pull:
 start:
 	$(DOCKER_COMPOSE) up -d --remove-orphans
 
+exec:
+	docker exec -it $(CONTAINER_NAME)_php bash
+
 stop:
 	$(DOCKER_COMPOSE) stop
 
 stop-all:
-	 docker stop $$(sudo docker ps -a -q)
+	 docker stop $$(docker ps -a -q)
 
 down:
 	$(DOCKER_COMPOSE) down
@@ -31,8 +31,8 @@ install:
 	docker exec -it $(CONTAINER_NAME)_php bash
 
 stop-remove-all:
-	sudo docker stop $$(sudo docker ps -a -q)
-	sudo docker rm $$(sudo docker ps -a -q)
-	sudo docker rmi $$(sudo docker images -a -q) -f
-	sudo docker network rm $$(sudo docker images -a -q)
+	docker stop $$(docker ps -a -q)
+	docker rm $$(docker ps -a -q)
+	docker rmi $$(docker images -a -q) -f
+	docker system prune -f
 
